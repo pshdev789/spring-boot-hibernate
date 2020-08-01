@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.pkg.springboothibernate.model.Book;
 import com.pkg.springboothibernate.service.BookService;
@@ -17,14 +17,10 @@ class SpringboothibernateApplicationTests {
 	private BookService bookService;
 	
 	@Test
-	void contextLoads() {
-	}
-	
-	@Test
 	void whenApplicationStarts_thenHibernateCreatesInitialRecords() {
 		
 		List<Book> books = bookService.list();
-//		Assert.assertEquals(books.size(),3);
+		Assert.assertEquals(books.size(),3);
 		
 	}
 
